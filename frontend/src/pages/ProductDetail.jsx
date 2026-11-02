@@ -9,7 +9,7 @@ const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [local, setLocal] = useState({ message: '', error: '' });
+  const [ setLocal] = useState({ message: '', error: '' });
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { showToast } = useToast();

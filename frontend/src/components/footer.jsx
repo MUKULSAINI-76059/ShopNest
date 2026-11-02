@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer-main">
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
-            <img src="/ShopNestLogo.png" className="footer-logo" ></img>
+            <img src="/ShopNestLogo.png" className="footer-logo" alt="logo" ></img>
             Shop<span>Nest</span></Link>
             <p className="footer-description">
              Quality products, great value, effortless shopping
