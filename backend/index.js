@@ -11,22 +11,21 @@ const orderRoutes = require("./routes/orderRoutes")
 const productRoutes = require("./routes/productRoutes")
 const analyticsRoutes = require("./routes/analyticsRoutes")
 const { apiRateLimiter, authRateLimiter } = require("./middleware/rateLimiters")
-
 const dns = require('dns');
 const cookieParser = require('cookie-parser');
 dns.setServers(['8.8.8.8'], ['8.8.4.4'])
 const app = express()
 
 connectDB()
-app.use(cookieParser());
 app.use(cors(
     {
         origin: process.env.FRONTEND_URL
-            ? [process.env.FRONTEND_URL, "http://localhost:3000", "http://127.0.0.1:3000"]
-            : ["http://localhost:3000", "http://127.0.0.1:3000"],
+        ? [process.env.FRONTEND_URL, "http://localhost:3000", "http://127.0.0.1:3000"]
+        : ["http://localhost:3000", "http://127.0.0.1:3000"],
         credentials:true
     }
 ))
+app.use(cookieParser());
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use("/api", apiRateLimiter)
