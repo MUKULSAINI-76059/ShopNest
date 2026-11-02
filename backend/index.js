@@ -17,14 +17,26 @@ dns.setServers(['8.8.8.8'], ['8.8.4.4'])
 const app = express()
 
 connectDB()
-app.use(cors(
-    {
-        origin: process.env.FRONTEND_URL
-        ? [process.env.FRONTEND_URL, "http://localhost:3000", "http://127.0.0.1:3000"]
-        : ["http://localhost:3000", "http://127.0.0.1:3000"],
-        credentials:true
-    }
-))
+const allowedOrigins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://shop-nest-three-sigma.vercel.app/",
+    ...(process.env.FRONTEND_URL || "")
+        .split(",")
+        .map((origin) => origin.trim().replace(/\/$/, ""))
+        .filter(Boolean),
+];
+
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin.replace(/\/$/, ""))) {
+            return callback(null, true);
+        }
+
+        return callback(new Error(`CORS blocked origin: ${origin}`));
+    },
+    credentials: true,
+}));
 app.use(cookieParser());
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
