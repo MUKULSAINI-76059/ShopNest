@@ -20,16 +20,17 @@ connectDB()
 const allowedOrigins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://shop-nest-three-sigma.vercel.app/",
+    "https://shop-nest-three-sigma.vercel.app",
+    "https://shopnest-ecom.vercel.app",
     ...(process.env.FRONTEND_URL || "")
         .split(",")
-        .map((origin) => origin.trim().replace(/\/$/, ""))
+        .map((origin) => origin.trim().replace(/\/+$/, ""))
         .filter(Boolean),
-];
+].map((origin) => origin.replace(/\/+$/, ""));
 
 app.use(cors({
     origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin.replace(/\/$/, ""))) {
+        if (!origin || allowedOrigins.includes(origin.replace(/\/+$/, ""))) {
             return callback(null, true);
         }
 

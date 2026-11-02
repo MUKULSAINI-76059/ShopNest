@@ -3,6 +3,12 @@ const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const {registerEmail} = require("../utils/sendEmail")
 
+const authCookieOptions = {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax"
+};
+
 const generateToken = async (id,role)=>{
     return jwt.sign({id,role}, process.env.SECRET_KEY, {expiresIn:"1h"})
 }
@@ -36,11 +42,7 @@ const registerUser = async(req, res)=>{
             const otp = Math.floor(100000 + Math.random() *900000).toString()
             const token = await generateToken(user._id,user.role)
             await registerEmail(email, name)
-            res.cookie("token", token, {
-                httpOnly: true,
-                secure: process.env.NODE_ENV === "production",
-                sameSite: "lax"
-           });
+            res.cookie("token", token, authCookieOptions);
             await user.save()
             return res.status(201).json({
                 message:"User created successfully.",
@@ -78,11 +80,7 @@ const loginUser = async(req,res) =>{
             return res.status(400).json({message:"Something went wrong."})
         }
         const token = await generateToken(isUser._id, isUser.role)
-            res.cookie("token", token, {
-                httpOnly: true,
-                secure: process.env.NODE_ENV === "production",
-                sameSite: "lax"
-           });        
+            res.cookie("token", token, authCookieOptions);
         return res.status(200).json({
             message:"User logged in successfully.",
             token:token,
