@@ -7,7 +7,7 @@ const protect = async(req, res, next)=>{
          if(!token){
              return res.status(401).json({message:"Access Denied"})}
         const decoded = jwt.verify(token, process.env.SECRET_KEY)
-        req.user = await userModel.findById(decoded.id).select("-password")    
+        req.user = await userModel.findById(decoded.id).select("-password").lean()    
         if(!req.user) {
             return res.status(400).json({message:"User not found"})}
         next()    

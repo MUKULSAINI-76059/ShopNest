@@ -3,7 +3,11 @@ const crypto = require("crypto");
 
 const createPaymentOrder = async (req, res) => {
   try {
-    const amount = 499;
+    const amount = Number(req.body.amount);
+    if (!Number.isFinite(amount) || amount <= 0) {
+      return res.status(400).json({ message: "Invalid payment amount" });
+    }
+
     const order = await razorpay.orders.create({
       amount: amount * 100,
       currency: "INR",

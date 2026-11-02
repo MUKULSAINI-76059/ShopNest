@@ -1,0 +1,360 @@
+
+/* ==============================
+   ShopNest Footer
+================================ */
+
+.shop-footer {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  margin-top: 50px;
+  padding: 48px 5% 20px;
+  overflow: hidden;
+  background: #09090d;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f4f4f5;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+.shop-footer *,
+.shop-footer *::before,
+.shop-footer *::after {
+  box-sizing: border-box;
+}
+
+.shop-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(249, 115, 22, 0.7),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ==============================
+   Main Layout
+================================ */
+
+.footer-main {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(110px, 0.8fr)
+    minmax(140px, 1fr)
+    minmax(150px, 0.9fr);
+  gap: 36px;
+  align-items: start;
+  padding-bottom: 36px;
+}
+
+/* ==============================
+   Brand & Logo
+================================ */
+
+.shop-footer .footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 340px;
+  min-width: 0;
+}
+
+
+.shop-footer a.footer-logo {
+  display: inline-flex;
+  align-items: baseline;
+  position: static;
+  width: auto;
+  height: auto;
+  flex: 0 0 auto;
+  margin: 0 0 16px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  color: #fafafa;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1.3px;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.shop-footer a.footer-logo img {
+  position: relative;
+  right: 6px;
+  height: 40px;
+  top: 8px;
+}
+
+
+
+.shop-footer a.footer-logo img{
+  margin-bottom:  0;
+  border:none
+}
+
+.shop-footer a.footer-logo span {
+  color: #fff;
+  margin-left: 2px;
+}
+
+.shop-footer a.footer-logo .footer-logo-dot {
+  color: #f97316;
+}
+
+.shop-footer a.footer-logo:hover {
+  background: transparent;
+  box-shadow: none;
+  color: #fafafa;
+}
+
+.shop-footer .footer-description {
+  display: block;
+  position: static;
+  width: 100%;
+  max-width: 300px;
+  margin: 0;
+  padding: 0;
+  color: #B8B8C2;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+
+.shop-footer .footer-links-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  margin-top: 14px;
+}
+
+.shop-footer .footer-links-group h4 {
+  margin: 0 0 5px;
+  color: #fafafa;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.shop-footer .footer-links-group a {
+  display: inline-block;
+  position: static;
+  max-width: 100%;
+  text-align: right;
+  padding: 0;
+  border: none;
+  padding-left: 3px;
+  background: transparent;
+  color: #a1a1aa;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.1px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.shop-footer .footer-links-group a:hover {
+  transform: translateX(3px);
+  background: transparent;
+  color: #fb923c;
+}
+
+/* ==============================
+   Back To Top
+================================ */
+
+.shop-footer .footer-back-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  min-width: 0;
+}
+
+.shop-footer .footer-back-top p {
+  margin: 0;
+  color: #a1a1aa;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+
+/* ==============================
+   Bottom Footer
+================================ */
+
+.shop-footer .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.shop-footer .footer-bottom p {
+  margin: 0;
+  color: #85858f;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.shop-footer .footer-bottom .footer-made-with span {
+  color: #f97316;
+}
+
+/* ==============================
+   Tablet
+================================ */
+
+@media (max-width: 1000px) {
+  .shop-footer {
+    padding: 42px 4% 20px;
+  }
+
+  .shop-footer .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 40px;
+  }
+
+  .shop-footer .footer-brand {
+    max-width: 100%;
+  }
+
+  .shop-footer .footer-back-top {
+    grid-column: auto;
+  }
+}
+
+/* ==============================
+   Mobile
+================================ */
+
+@media (max-width: 600px) {
+  .shop-footer {
+    padding: 34px 20px 18px;
+  }
+
+  .shop-footer .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 20px;
+    padding-bottom: 28px;
+  }
+
+  .shop-footer .footer-brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  .shop-footer a.footer-logo {
+    margin-bottom: 12px;
+    font-size: 29px;
+  }
+
+  .shop-footer .footer-description {
+    max-width: 340px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .shop-footer .footer-links-group {
+    gap: 12px;
+  }
+
+  .shop-footer .footer-links-group h4 {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+
+  .shop-footer .footer-links-group a {
+    font-size: 13px;
+  }
+
+  .shop-footer .footer-back-top {
+    grid-column: 1 / -1;
+    gap: 14px;
+  }
+
+  .shop-footer .footer-back-top p {
+    font-size: 13px;
+  }
+
+  .shop-footer .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 16px;
+  }
+
+  .shop-footer .footer-bottom p {
+    font-size: 12px;
+  }
+}
+
+/* ==============================
+   Small Mobile
+================================ */
+
+@media (max-width: 360px) {
+  .shop-footer {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .shop-footer .footer-main {
+    column-gap: 14px;
+  }
+
+  .shop-footer a.footer-logo {
+    font-size: 27px;
+  }
+
+  .shop-footer .footer-links-group a {
+    font-size: 12px;
+  }
+}
+
+/* ==============================
+   Reduced Motion
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .shop-footer *,
+  .shop-footer *::before,
+  .shop-footer *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+

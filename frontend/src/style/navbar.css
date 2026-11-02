@@ -10,12 +10,17 @@
     position: sticky;
     z-index: 1000;
     box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    top: 0;
 }
 
 .navbar-brand img{
     height: 39px;
     width: 39px;
     border-radius: 50%;
+}
+
+.navbar-brand span{
+    margin-left: -8px;
 }
 
 .navbar-brand a{
@@ -35,14 +40,15 @@
     font-size: 36px;
 }
 
+
 .navbar-links{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 .navbar-links a, .navbar-links span{
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500px;
     color: #a1a1aa;
     position: relative;
@@ -68,6 +74,14 @@
     width: 100%;
 }
 
+.navbar-links a.active{
+    color: #fff;
+}
+
+.navbar-links a.active::after{
+    width: 100%;
+}
+
 .btn-logout{
     background: transparent;
     color: #ef4444;
@@ -88,8 +102,39 @@
 
 @media (max-width: 768px){
     .navbar{
-        padding:15px 20px;
-        flex-direction: column;
-        gap: 15px;
+        padding: 12px 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-brand a {
+        font-size: 23px;
+    }
+
+    .navbar-links {
+        width: 100%;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-links a,
+    .navbar-links span {
+        font-size: 14px;
+    }
+
+    .btn-logout {
+        padding: 7px 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .navbar {
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        justify-content: flex-start;
+        gap: 10px 14px;
     }
 }

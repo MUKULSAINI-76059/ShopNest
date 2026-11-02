@@ -1,36 +1,49 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../style/footer.css";
 
 const Footer = () => {
+
   return (
-    <footer style={{
-      background: '#09090b',
-      borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-      padding: '40px 20px',
-      marginTop: 'auto'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        gap: '20px'
-      }}>
-        <div>
-          <h3 style={{ color: '#f97316', marginBottom: '10px' }}>ShopNest</h3>
-          <p style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>Premium E-Commerce Platform.</p>
+    <footer className="shop-footer">
+      <div className="footer-container">
+        <div className="footer-main">
+          <div className="footer-brand">
+            <Link to="/" className="footer-logo">
+            <img src="/ShopNestLogo.png" className="footer-logo" ></img>
+            Shop<span>Nest</span></Link>
+            <p className="footer-description">
+             Quality products, great value, effortless shopping
+            </p>
+          </div>
+
+          <div className="footer-links-group">
+            <h4>Explore</h4>
+            <Link to="/">Home</Link>
+            <Link to="/about">About Us</Link>
+            <Link to="/shop">Shop Products</Link>
+          </div>
+
+          <div className="footer-links-group">
+            <h4>Customer Care</h4>
+            <Link to="/returnPolicy">Return Policy</Link>
+            <Link to="/disclaimer">Disclaimer</Link>
+            <a href="mailto:admin76059@gmail.com">Contact Support</a>
+          </div>
+
+          <div className="footer-links-group footer-social-column">
+            <h4>Follow Us</h4>
+            <a href="https://www.instagram.com/mukulsaini202/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://github.com/MukulSaini-76059" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/mukul-saini-603346321/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
+
         
-        <div style={{ display: 'flex', gap: '20px' }}>
-          <Link to="/about" style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>About Us</Link>
-          <Link to="/return" style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>Return Policy</Link>
-          <Link to="/disclaimer" style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>Disclaimer</Link>
-        </div>
-        
-        <div style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>
-          &copy; {new Date().getFullYear()} ShopNest. All rights reserved.
+
+        <div className="footer-bottom">
+          <p>&copy; {new Date().getFullYear()} ShopNest. All rights reserved.</p>
+          <p className="footer-made-with">Made with <span>&hearts;</span> for shoppers</p>
         </div>
       </div>
     </footer>

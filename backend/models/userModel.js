@@ -23,6 +23,8 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:"false"
     }
-})
+}, { timestamps: true })
+
+userSchema.index({ role: 1 })
 
 module.exports = mongoose.model("users", userSchema)
