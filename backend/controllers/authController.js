@@ -1,7 +1,7 @@
 const userModel = require("../models/userModel")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
-const {registerEmail} = require("../utilis/sendEmail")
+const {registerEmail} = require("../utils/sendEmail")
 
 const generateToken = async (id,role)=>{
     return jwt.sign({id,role}, process.env.SECRET_KEY, {expiresIn:"1h"})

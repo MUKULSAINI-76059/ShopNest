@@ -1,8 +1,8 @@
 const orderModel = require("../models/orderModel")
 const productModel = require("../models/productModel")
 const userModel = require("../models/userModel")
-const {orderStatusEmail} = require("../utilis/sendEmail")
-const { orderConfirmationEmail } = require("../utilis/sendEmail");
+const {orderStatusEmail} = require("../utils/sendEmail")
+const { orderConfirmationEmail } = require("../utils/sendEmail");
 
 const createOrder = async (req, res) => {
   try {
