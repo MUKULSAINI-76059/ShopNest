@@ -1,16 +1,21 @@
 const nodemailer = require("nodemailer");
 
+const emailUser = process.env.EMAIL_USER?.trim();
+const emailPassword = process.env.EMAIL_PASS?.replace(/\s/g, "");
+
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    user: emailUser,
+    pass: emailPassword,
   },
 });
 
-transporter.verify((error, success) => {
+transporter.verify((error) => {
   if (error) {
-    console.log("Email server error:", error.message);
+    console.error("Email server error:", error.code, error.response || error.message);
   } else {
     console.log("✅ Email server is ready to send messages");
   }
@@ -18,7 +23,7 @@ transporter.verify((error, success) => {
 
 const sendEmail = async (to, subject, text, html) => {
     const info = await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from: emailUser,
       to,
       subject,
       text,

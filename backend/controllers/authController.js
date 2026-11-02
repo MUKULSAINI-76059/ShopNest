@@ -39,11 +39,14 @@ const registerUser = async(req, res)=>{
         const hashedPassword = await bcrypt.hash(password,10)
         const user = new userModel({name, email, password:hashedPassword, role})
         if(user){
-            const otp = Math.floor(100000 + Math.random() *900000).toString()
             const token = await generateToken(user._id,user.role)
-            await registerEmail(email, name)
-            res.cookie("token", token, authCookieOptions);
             await user.save()
+            res.cookie("token", token, authCookieOptions);
+
+            registerEmail(email, name).catch((error) => {
+                console.error("Registration email failed:", error.message);
+            });
+
             return res.status(201).json({
                 message:"User created successfully.",
                 token:token,

@@ -88,11 +88,9 @@ const createOrder = async (req, res) => {
       const user = await userModel.findById(order.userId)
       console.log(user)
 if (user?.email) {
-  try {
-    await orderConfirmationEmail(user.email, order);
-  } catch (error) {
+  orderConfirmationEmail(user.email, order).catch((error) => {
     console.error("Order confirmation email failed:", error.message);
-  }
+  });
 }
 
     return res.status(201).json({
