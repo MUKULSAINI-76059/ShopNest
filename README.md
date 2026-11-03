@@ -232,8 +232,6 @@ npm start
 
 ## 🗺️ Roadmap
 
-- [ ] Payment gateway integration
-- [ ] Product search & filters
 - [ ] Reviews & ratings
 - [ ] Wishlist
 
