@@ -232,6 +232,7 @@ npm start
 
 ## 🗺️ Roadmap
 
+- [ ] Live order tracking
 - [ ] Reviews & ratings
 - [ ] Wishlist
 
