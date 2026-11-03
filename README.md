@@ -52,9 +52,10 @@
 
 ### ⚡ Explore the ShopNest Admin Panel
 
-Want to explore the admin features? Use the demo credentials below to sign in and experience the admin dashboard.
+Want to explore the admin dashboard? Use the demo credentials below to
+log in and view the available admin features.
 
-<img src="https://img.shields.io/badge/DEMO_ACCOUNT-Admin-F97316?style=for-the-badge&logo=shield&logoColor=white" alt="Admin Demo Account"/>
+<img src="https://img.shields.io/badge/DEMO_ACCOUNT-View_Only-F97316?style=for-the-badge&logo=shield&logoColor=white" alt="Read-Only Admin Demo"/>
 
 </div>
 
@@ -62,36 +63,53 @@ Want to explore the admin features? Use the demo credentials below to sign in an
 |:---|:---|
 | **Email** | `admin321@gmail.com` |
 | **Password** | `Admin@321` |
-| **Access** | Admin Panel |
+| **Access** | Admin Panel — View Only |
 
 <div align="center">
 
 <a href="https://shop-nest-three-sigma.vercel.app">
-  <img src="https://img.shields.io/badge/🚀_LOGIN_AS_ADMIN-Explore_Now-F97316?style=for-the-badge" alt="Explore Admin Panel"/>
+  <img src="https://img.shields.io/badge/🚀_EXPLORE_ADMIN-Login_Now-F97316?style=for-the-badge" alt="Explore Admin Panel"/>
 </a>
-
-<sub>💡 Open the live application, log in with the credentials above, and explore the available admin features.</sub>
 
 </div>
 
-> ⚠️ **Demo account:** Please avoid changing account credentials or modifying data that other visitors may need.
+### 🔒 Demo Account Restrictions
 
----
+- 👀 **View Only:** Explore the admin dashboard, products, orders, and user directory.
+- 🚫 **No Editing:** Do not modify existing products, orders, or user details.
+- 🗑️ **No Deleting:** Do not delete products, orders, or user accounts.
+- 🤝 **Shared Account:** This demo account is available for other visitors to explore the project.
+
+> **Note:** These restrictions describe the intended use of the demo account. Actual edit/delete permissions must also be disabled or enforced by the backend to guarantee read-only access.
 
 
 ## 📸 Screenshots
 
-> Create a `screenshots/` folder in the repo and upload images with these exact names.
+Explore the different pages and features of ShopNest.
+
+### 🛍️ User Interface
 
 | Home | Products |
 |:---:|:---:|
 | <img src="./screenshots/home.png" width="420" /> | <img src="./screenshots/products.png" width="420" /> |
 
-| Cart | Admin Panel |
+| Shopping Cart | Order Confirmation |
 |:---:|:---:|
-| <img src="./screenshots/cart.png" width="420" /> | <img src="./screenshots/admin.png" width="420" /> |
+| <img src="./screenshots/cart.png" width="420" /> | <img src="./screenshots/order-confirmation.png" width="420" /> |
 
----
+| User Profile | About Us |
+|:---:|:---:|
+| <img src="./screenshots/profile.png" width="420" /> | <img src="./screenshots/about-us.png" width="420" /> |
+
+### ⚙️ Admin Panel
+
+| Admin Dashboard | Manage Products |
+|:---:|:---:|
+| <img src="./screenshots/admin-dashboard.png" width="420" /> | <img src="./screenshots/admin-manage-products.png" width="420" /> |
+
+| Manage Orders | User Directory |
+|:---:|:---:|
+| <img src="./screenshots/admin-manage-orders.png" width="420" /> | <img src="./screenshots/admin-user-directory.png" width="420" /> |
 
 ## 🧠 Concepts & Skills Applied
 
@@ -135,21 +153,33 @@ Want to explore the admin features? Use the demo credentials below to sign in an
 
 ```bash
 ShopNest/
-├── backend/        # Node.js + Express REST API
-│   ├── models/     # Mongoose schemas
-│   ├── routes/     # API routes
-│   ├── controllers/# Business logic
-│   ├── middleware/ # Auth & error handling
-│   └── server.js   # Entry point
+├── backend/                     # Node.js + Express REST API
+│   ├── models/                  # Mongoose schemas
+│   ├── routes/                  # API routes
+│   ├── controllers/             # Business logic
+│   ├── middleware/              # Authentication & error handling
+│   └── server.js                # Entry point
 │
-├── frontend/       # React client
+├── frontend/                    # React client
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
 │   │   └── App.js
 │   └── package.json
 │
-└── screenshots/    # README images
+├── screenshots/                 # Project screenshots for README
+│   ├── home.png
+│   ├── products.png
+│   ├── cart.png
+│   ├── order-confirmation.png
+│   ├── profile.png
+│   ├── admin-dashboard.png
+│   ├── admin-manage-products.png
+│   ├── admin-manage-orders.png
+│   ├── admin-user-directory.png
+│   └── about-us.png
+│
+└── README.md
 ```
 
 ---
